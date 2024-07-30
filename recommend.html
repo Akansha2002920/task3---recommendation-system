@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations for {{ user_id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recommendations for {{ user_id }}</h1>
+    </header>
+    <main>
+        <ul>
+            {% for item, score in recommendations.items() %}
+                <li>{{ item }}: {{ score }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/">Back to Home</a>
+    </main>
+    <footer>
+        <p>© 2024 Recommendation Engine</p>
+    </footer>
+</body>
+</html>
